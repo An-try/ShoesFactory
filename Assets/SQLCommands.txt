@@ -1,0 +1,59 @@
++1. Простий запит на вибірку
++2. Запит на вибірку з використанням between….and
++3. Запит на вибірку з використанням in
++4. Запит на вибірку з використанням like
++5. Запит на вибірку з двома умовами через “and”
++6. Запит на вибірку з двома умовами через «оr»
++7. Запит на вибірку з використанням DISTINCT
++8. Запит з функцією min або max
++9. Запит з функцією sum або avg
++10.Запит з функцією count
++11.Запит на вибірку з використанням агрегатної функції і виведенням ще
+декількох полів.
+12.Запит на вибірку з використанням агрегатної функції і умовою на
+вибірку поля.
+13.Запит на вибірку з використанням агрегатної функції і умовою на
+агрегатну функцію.
+14.Запит на вибірку з використанням агрегатної функції, умовою на
+агрегатну функцію, умовою на вибірку поля з сортуванням даних.
+15.Запит з використанням INNER JOIN
+16.Запит з використанням LEFT JOIN
+17.Запит з використанням RIGHT JOIN
+18.Запит з використанням INNER JOIN і умовою
+19.Запит з використанням INNER JOIN і умовою LIKE
+20.Запит з використанням INNER JOIN і використанням агрегатної
+функції
+21.Запит з використанням INNER JOIN і використанням агрегатної
+функції і умови HAVING
+22.Запит з використанням підзапита з використанням (=, <,>)
+23.Запит з використанням підзапита з використанням агрегатної функції
+24.Запит з використанням підзапита з використанням оператора EXIST
+25.Запит з використанням підзапита з використанням АNY або SOME
+26.Запит з використанням підзапита з використанням IN
+27.Запит з використанням підзапита і зв’язку INNER JOIN
+
+
+
+SELECT * FROM drivers
+SELECT * FROM drivers WHERE salary BETWEEN 10000 AND 20000
+SELECT * FROM drivers WHERE first_name IN ('Josh', Mark)
+SELECT * FROM skin_shops WHERE email LIKE '%@gmail.com%'
+SELECT * FROM drivers WHERE age > 30 AND salary < 15000
+SELECT * FROM drivers WHERE age < 30 OR age > 50
+SELECT DISTINCT s_name FROM shoes
+SELECT MIN(salary) FROM drivers
+SELECT MAX(salary) FROM drivers
+SELECT SUM(salary) FROM drivers
+SELECT AVG(salary) FROM drivers
+SELECT COUNT(*)<br />FROM completed_deliveries
+
+SELECT MIN(salary) FROM drivers
+SELECT first_name, last_name FROM drivers WHERE MIN(salary)
+
+SELECT * FROM skin_orders INNER JOIN skin_shops ON skin_orders.skin_shop_id = skin_shops.id
+
+UPDATE $table_name SET $field_name = $field_value WHERE $field_id_name = $required_id
+
+
+
+INSERT INTO drivers (first_name, last_name, age, salary, experience_in_years) VALUES ('". $first_name. "', '". $last_name. "', '". $age. "', '". $salary. "', '". $experience_in_years. "');
